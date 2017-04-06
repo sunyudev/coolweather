@@ -2,9 +2,11 @@ package com.sy.coolweather.util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.sy.coolweather.db.City;
 import com.sy.coolweather.db.County;
 import com.sy.coolweather.db.Province;
+import com.sy.coolweather.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +18,17 @@ import org.json.JSONObject;
 
 public class Utility {
 
+    public static Weather handleWeatherResponse(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static boolean handleProvinceResponse(String response){
         if (!TextUtils.isEmpty(response)) {
             try {
