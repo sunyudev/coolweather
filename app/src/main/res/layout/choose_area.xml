@@ -3,9 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
+
     >
 
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="?attr/colorPrimary">
@@ -30,6 +32,7 @@
             />
     </RelativeLayout>
     <ListView
+
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

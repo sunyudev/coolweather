@@ -6,6 +6,7 @@
     tools:context="com.sy.coolweather.MainActivity">
 
     <fragment
+        android:fitsSystemWindows="true"
         android:id="@+id/choose_area"
         android:name="com.sy.coolweather.ChooseAreaFragment"
         android:layout_width="match_parent"
